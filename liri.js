@@ -2,8 +2,8 @@ require('dotenv').config();
 
 var keys = require('./keys.js');
 
-var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var bandsInTown = new bandsInTown()
 
 var axios = require('axios');
 
@@ -57,10 +57,10 @@ function writeToFile(filename, output) {
 
 function searchedSong() {
     var songName;
-    if (string === undefined || string === null || string === '') {
+    if (searchedSong === undefined || searchedSong === null || searchedSong === '') {
         songName = "The Sign Ace of Base";
     } else {
-        songName = string;
+        songName = searchedSong;
     }
     spotify.search
 }
