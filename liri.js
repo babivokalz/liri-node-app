@@ -58,7 +58,7 @@ function writeToFile(filename, output) {
 function searchedSong() {
     var songName;
     if (string === undefined || string === null || string === '') {
-        songName = "Throwing Elbows";
+        songName = "The Sign Ace of Base";
     } else {
         songName = string;
     }
