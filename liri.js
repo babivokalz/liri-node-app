@@ -55,11 +55,14 @@ function writeToFile(filename, output) {
     });
 };
 
-function querySpotify(song) {
+function searchedSong() {
     var songName;
-    if (song === undefined || song === null || song === '') {
-        songName = ""
+    if (string === undefined || string === null || string === '') {
+        songName = "Throwing Elbows";
+    } else {
+        songName = string;
     }
+    spotify.search
 }
 
 // function commandInput(input) {
