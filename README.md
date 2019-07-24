@@ -7,7 +7,7 @@ For this assignment we were to create a command line node application called LIR
 ## Technologies Used:
 * Node.JS
 * fs
-* OMDB API
+* OMDb API
 * Node-Spotify-API
 * BandsInTown API
 * Moment
