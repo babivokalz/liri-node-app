@@ -11,7 +11,7 @@ var moment = require('moment');
 
 var fs = require('fs');
 
-let writeToFile = false;
+// let writeToFile = false;
 let input = process.argv.slice(2).join(' ');
 
 // input = commandInput(input);
@@ -198,47 +198,49 @@ axios.get(queryURL).then(
     });
 }
 
-function printFormat(message, data) {
-let format = {
-    columnWidth: 29,
-    breakPoint: 40
-};
+// function printFormat(message, data) {
+// let format = {
+//     columnWidth: 29,
+//     breakPoint: 40
+// };
 
-let string = "";
+// let string = "";
 
-string += " ".repeat(2);
-string += message + " ".repeat(format.columnWidth - 2 - message.length);
+// string += " ".repeat(2);
+// string += message + " ".repeat(format.columnWidth - 2 - message.length);
 
-if (data.length > format.breakPoint) {
-    let words = data.split(" ");
-    let count = 0;
+// if (data.length > format.breakPoint) {
+//     let words = data.split(" ");
+//     let count = 0;
     
-    if (words[0].length > format.breakPoint) {
-        string += data;
-    }
+//     if (words[0].length > format.breakPoint) {
+//         string += data;
+//     }
 
-    for (let i=1; i < words.length; i++ ) {
-        string += words[i-1] + " ";
-        count += words[i-1].length;
-        count++;
+//     for (let i=1; i < words.length; i++ ) {
+//         string += words[i-1] + " ";
+//         count += words[i-1].length;
+//         count++;
 
-        if (count + words[i].length > format.breakPoint) {
-            string += "\n";
-            count = 0;
-            string += " ".repeat(format.columnWidth);
-        }
+//         if (count + words[i].length > format.breakPoint) {
+//             string += "\n";
+//             count = 0;
+//             string += " ".repeat(format.columnWidth);
+//         }
         
-        if (i == words.length-1) {
-            if (count + words[i].length > format.breakPoint) {
-                string += "\n";
-                string += " ".repeat(format.columnWidth);
-            }
-            string += words[i];
-        }
-    }
+//         if (i == words.length-1) {
+//             if (count + words[i].length > format.breakPoint) {
+//                 string += "\n";
+//                 string += " ".repeat(format.columnWidth);
+//             }
+//             string += words[i];
+//         }
+//     }
 
-} else {
-    string += data;
-}
+// } else {
+//     string += data;
+// }
 
-return string;
+// return string;
+
+useLiri(input);
