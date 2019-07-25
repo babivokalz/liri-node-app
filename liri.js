@@ -14,11 +14,11 @@ var fs = require('fs');
 // let writeToFile = false;
 let input = process.argv.slice(2).join(' ');
 
-// input = commandInput(input);
+// input = readFile(input);
 // let action = input.slice(0, input.indexOf(' ') == -1 ? input.length : input.indexOf(' '));
 // let value = input.indexOf(' ') == -1 ? null : input.slice(input.indexOf(' ') + 1); 
 
-useLiri (action, value);
+// useLiri (action, value);
 
 function useLiri (action, value) {
     switch (action) {
