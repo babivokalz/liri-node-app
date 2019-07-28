@@ -1,5 +1,5 @@
 require("dotenv").config();
-var spotify = require("node-spotify-api");
+var Spotify = require("node-spotify-api");
 
 console.log("this is loaded");
 

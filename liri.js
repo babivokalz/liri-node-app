@@ -3,8 +3,9 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 
-var Spotify = new Spotify(keys.spotify);
-// var bandsInTown = new bandsInTown();
+var spotify = new Spotify(keys.spotify);
+var bandsInTown = keys.bandsInTownKey;
+var ombd = keys.omdbKey;
 
 var axios = require("axios");
 
@@ -13,7 +14,7 @@ var moment = require("moment");
 var fs = require("fs");
 
 // let writeToFile = false;
-let input = process.argv.slice(2).join(" ");
+var input = process.argv[2];
 
 // input = readFile(input);
 // let action = input.slice(0, input.indexOf(' ') == -1 ? input.length : input.indexOf(' '));
@@ -21,232 +22,158 @@ let input = process.argv.slice(2).join(" ");
 
 // useLiri (action, value);
 
-function useLiri(action, value) {
+function useLiri(action) {
   switch (action) {
     case "concert-this":
-      concertSearch(value);
+      concertSearch();
       break;
     case "spotify-this-song":
-      searchedSong(value);
+      searchedSong();
       break;
     case "movie-this":
-      searchedMovie(value);
+      searchedMovie();
       break;
     case "do-what-it-says":
-      readFile("random.txt");
+      readFile();
       break;
+    default:
+      console.log("Try Again");
   }
 }
 
-function readFile(filename) {
-  fs.readFile(filename, "utf8", function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
-    data = data.split(",");
-    useLiri(data[0], data[1]);
+function readFile() {
+  fs.readFile("random.txt", "utf8", function(error, data) {
+    var data = data.split(",");
+    (input = data[0]), data[1];
+    useLiri(input);
   });
 }
 
-function writeToFile(filename, output) {
-  fs.appendFile(filename, output, function(err) {
-    if (err) {
-      return console.log(err);
+function writeToFile(output) {
+  fs.appendFile("log.txt", output, function(error) {
+    if (error) {
+      return console.log(error);
     }
   });
 }
 
 function searchedSong() {
-  var songName;
-  if (!searchedSong) {
-    songName = "The Sign Ace of Base";
-  } else {
+  var songName = input;
+  if (!songName) {
     songName = searchedSong;
+  } else {
+    songName = "The Sign Ace of Base";
   }
-  spotify
-    .search({ type: "track", query: songName })
-    .then(function(response) {
-      let results = 1;
-      let output = "";
-
-      if (response.tracks.items.length > 0) {
-        output =
-          "-----  " + action + "  " + "-".repeat(70 - action.length - 9) + "\n";
-
-        for (let i = 0; i < results; i++) {
-          let track = {
-            artist: response.tracks.items[i].artists[0].name,
-            song: response.tracks.items[i].name,
-            preview: response.tracks.items[i].preview_url,
-            album: response.tracks.items[i].album.name
-          };
-
-          output += printFormat("Artist", track.artist) + "\n";
-          output += printFormat("Song ", track.song) + "\n";
-          output +=
-            printFormat(
-              "Preview ",
-              track.preview == null ? "" : track.preview
-            ) + "\n";
-          output += printFormat("Album ", track.album) + "\n";
-          output += "-".repeat(70) + "\n";
-        }
-
-        if (writeToFile) writeFile("log.txt", output);
-
-        console.log(output);
-      } else {
-        console.log("\nNo Results");
-      }
-    })
-    .catch(function(error) {
-      console.log("Error occurred: " + error);
-    });
+  spotify.search({ type: "track", query: input, limit: 1 }, function(
+    error,
+    data
+  ) {
+    if (error) {
+      console.log("Error Occured" + error);
+      return;
+    }
+    var track = data.tracks.items;
+    for (var i = 0; i < track.length; i++) {
+      console.log("Artist: " + track[i].artists[0].name);
+      console.log("Song: " + track[i].name);
+      console.log("Preview: " + track[i].preview_url);
+      console.log("Album: " + track[i].album.name);
+      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
+      writeToFile(
+        "Artist: " +
+          track[i].artists[0].name +
+          "\n" +
+          "Song: " +
+          track[i].name +
+          "\n" +
+          "Preview: " +
+          track[i].preview_url +
+          "\n" +
+          "Album: " +
+          track[i].album.name +
+          "\n"
+      );
+    }
+  });
 }
 
 function searchedMovie() {
-  var movieName;
+  var movieName = input;
   if (!searchedMovie) {
-    movieName = "Mr.+Nobody";
-  } else {
     movieName = searchedMovie;
+  } else {
+    movieName = "Mr.+Nobody";
   }
-
   var queryURL =
     "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
   axios.get(queryURL).then(function(response) {
-    if (response.data.Response == "True") {
-      let movie = {
-        title: response.data.Title,
-        year: response.data.Year,
-        imdbRating: response.data.imdbRating,
-        rtRating:
-          response.data.Ratings.length > 1
-            ? response.data.Ratings[1].Value
-            : "Not Available",
-        country: response.data.Country,
-        language: response.data.Language,
-        plot: response.data.Plot,
-        actors: response.data.Actors
-      };
-
-      let output = "";
-      output =
-        "-----  " + action + "  " + "-".repeat(70 - action.length - 9) + "\n";
-
-      output += printFormat("Movie Name", movie.title) + "\n";
-      output += printFormat("Release Year", movie.year) + "\n";
-      output += printFormat("IMDB Rating", movie.imdbRating) + "\n";
-      output += printFormat("Rotten Tomatoes Rating", movie.rtRating) + "\n";
-      output += printFormat("Country", movie.country) + "\n";
-      output += printFormat("Language(s)", movie.language) + "\n";
-      output += printFormat("Plot", movie.plot) + "\n";
-      output += printFormat("Actors", movie.actors) + "\n";
-      output += "-".repeat(70) + "\n";
-
-      if (writeToFile) writeFile("log.txt", output);
-
-      console.log(output);
-    } else {
-      console.log("\nNo Results");
-    }
+    console.log("Title: " + response.data.Title);
+    console.log("Year: " + response.data.Year);
+    console.log("IMDB Rating: " + response.data.imdbRating);
+    console.log(
+      "Rotten Tomatoes Rating: " + response.data.Ratings.length > 1
+        ? response.data.Ratings[1].value
+        : "Not Available"
+    );
+    console.log("Country: " + response.data.Country);
+    console.log("Language: " + response.data.Language);
+    console.log("Plot: " + response.data.Plot);
+    console.log("Actors: " + response.data.Actors);
+    console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
+    writeToFile(
+      "Country: " +
+        response.data.Country +
+        "\n" +
+        "Language: " +
+        response.data.Language +
+        "\n" +
+        "Plot: " +
+        response.data.Plot +
+        "\n" +
+        "Actors: " +
+        response.data.Actors
+    );
   });
 }
 
 function concertSearch() {
-  var artistName;
-  if (!concertSearch) {
-    artistName = "Rezz";
-  } else {
-    artistName = concertSearch;
-  }
-
+  var artistName = input;
   var queryURL =
     "https://rest.bandsintown.com/artists/" +
     artistName +
-    "/events?app_id=69d599c4300d32f4daca7da3ac289e13";
+    "/events?app_id=${bandsInTownKey}";
 
   axios.get(queryURL).then(function(response) {
-    let results = 1;
-    let output = "";
-
-    if (response.data.indexOf("Not found") == -1) {
-      output =
-        "-----  " + action + "  " + "-".repeat(70 - action.length - 9) + "\n";
-      for (let i = 0; i < results; i++) {
-        let venue = {
-          name: response.data[i].venue.name,
-          location:
-            response.data[i].venue.city +
-            ", " +
-            response.data[i].venue.region +
-            ", " +
-            response.data[i].venue.country,
-
-          date: moment(response.data[i].datetime, "YYYY-MM-DD HH:mm:ss").format(
-            "MM/DD/YYYY"
-          )
-        };
-
-        output += printFormat("Venue Name", venue.name) + "\n";
-        output += printFormat("Location", venue.location) + "\n";
-        output += printFormat("Date of Event", venue.date) + "\n";
-        output += "-".repeat(70) + "\n";
-      }
-
-      if (writeToFile) writeFile("log.txt", output);
-
-      console.log(output);
-    } else {
-      console.log("\nNo Results");
+    for (var i = 0; i < response.data.length; i++) {
+      console.log("Venue: " + response.data[i].venue.name);
+      console.log(
+        "Location: " +
+          response.data[i].venue.city +
+          ", " +
+          response.data[i].venue.region +
+          ", " +
+          response.data[i].venue.country
+      );
+      console.log(
+        "Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY")
+      );
+      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
+      writeFile(
+        "Venue: " +
+          response.data[i].venue.name +
+          "\n" +
+          "Location: " +
+          response.data[i].venue.city +
+          ", " +
+          response.data[i].venue.region +
+          ", " +
+          response.data[i].venue.country +
+          "\n" +
+          "Date: " +
+          moment(response.data[i].datetime).format("MM/DD/YYYY")
+      );
     }
   });
 }
-
-// function printFormat(message, data) {
-// let format = {
-//     columnWidth: 29,
-//     breakPoint: 40
-// };
-
-// let string = "";
-
-// string += " ".repeat(2);
-// string += message + " ".repeat(format.columnWidth - 2 - message.length);
-
-// if (data.length > format.breakPoint) {
-//     let words = data.split(" ");
-//     let count = 0;
-
-//     if (words[0].length > format.breakPoint) {
-//         string += data;
-//     }
-
-//     for (let i=1; i < words.length; i++ ) {
-//         string += words[i-1] + " ";
-//         count += words[i-1].length;
-//         count++;
-
-//         if (count + words[i].length > format.breakPoint) {
-//             string += "\n";
-//             count = 0;
-//             string += " ".repeat(format.columnWidth);
-//         }
-
-//         if (i == words.length-1) {
-//             if (count + words[i].length > format.breakPoint) {
-//                 string += "\n";
-//                 string += " ".repeat(format.columnWidth);
-//             }
-//             string += words[i];
-//         }
-//     }
-
-// } else {
-//     string += data;
-// }
-
-// return string;
-
 useLiri(input);
