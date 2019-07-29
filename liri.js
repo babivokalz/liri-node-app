@@ -14,7 +14,7 @@ var moment = require("moment");
 var fs = require("fs");
 
 // let writeToFile = false;
-var input = process.argv[2];
+var input = process.argv[3];
 
 // input = readFile(input);
 // let action = input.slice(0, input.indexOf(' ') == -1 ? input.length : input.indexOf(' '));
@@ -22,8 +22,8 @@ var input = process.argv[2];
 
 // useLiri (action, value);
 
-function useLiri(action) {
-  switch (action) {
+function useLiri(input) {
+  switch (input) {
     case "concert-this":
       concertSearch();
       break;
@@ -34,10 +34,11 @@ function useLiri(action) {
       searchedMovie();
       break;
     case "do-what-it-says":
-      readFile();
+      readFile("random.txt");
       break;
     default:
-      console.log("Try Again");
+      console.log(input)
+      // console.log("Try Again");
   }
 }
 
@@ -56,6 +57,7 @@ function writeToFile(output) {
     }
   });
 }
+searchedSong();
 
 function searchedSong() {
   var songName = input;
@@ -72,15 +74,15 @@ function searchedSong() {
       console.log("Error Occured" + error);
       return;
     }
+    console.log(data);
     var track = data.tracks.items;
     for (var i = 0; i < track.length; i++) {
-      console.log("Artist: " + track[i].artists[0].name);
+      console.log("\n" + "Artist: " + track[i].artists[0].name);
       console.log("Song: " + track[i].name);
       console.log("Preview: " + track[i].preview_url);
-      console.log("Album: " + track[i].album.name);
-      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
-      writeToFile(
-        "Artist: " +
+      console.log("Album: " + track[i].album.name + "\n");
+      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*" + "\n");
+      writeToFile("Artist: " +
           track[i].artists[0].name +
           "\n" +
           "Song: " +
@@ -91,21 +93,23 @@ function searchedSong() {
           "\n" +
           "Album: " +
           track[i].album.name +
-          "\n"
+          "\n" + "\n"
       );
     }
   });
 }
 
+searchedMovie();
 function searchedMovie() {
   var movieName = input;
+  console.log(input)
   if (!searchedMovie) {
     movieName = searchedMovie;
   } else {
     movieName = "Mr.+Nobody";
   }
   var queryURL =
-    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+    "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy";
 
   axios.get(queryURL).then(function(response) {
     console.log("Title: " + response.data.Title);
@@ -136,6 +140,8 @@ function searchedMovie() {
     );
   });
 }
+
+concertSearch();
 
 function concertSearch() {
   var artistName = input;
