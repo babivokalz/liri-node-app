@@ -60,7 +60,7 @@ function writeToFile(output) {
 // searchedSong();
 
 function searchedSong() {
-  var songName = input;
+  var songName = searchedSong;
   if (!songName) {
     songName = searchedSong;
   } else {
