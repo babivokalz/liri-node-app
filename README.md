@@ -42,9 +42,9 @@ Using the OMDB API, when the user gives the command "movie-this" in addition to 
 
 Movie-this also works when the user does not input a searched movie title, in this case it will default to "Mr. Nobody". 
 
-> ![alt text][logo]
+> ![alt text][logo3]
 
-[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20No%20Movie%20Name.png "No Movie Name"
+[logo3]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20No%20Movie%20Name.png "No Movie Name"
 
 ## BandsInTown Usage:
 
@@ -52,9 +52,9 @@ Movie-this also works when the user does not input a searched movie title, in th
 
 Using the BandsInTown API, the user is able to search for upcoming concerts by giving the command "concert-this" in addition to their desired searched Artist. The data that returns includes the Venue Name, Venue Location, and the Date of the Concert. Here you can see what data returns when the artist "Rezz" is searched.
 
-> ![alt text][logo]
+> ![alt text][logo4]
 
-[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Bands%20In%20Town.png "Bands In Town Search"
+[logo4]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Bands%20In%20Town.png "Bands In Town Search"
 
 ## Read Instructions from File:
 
@@ -62,4 +62,14 @@ Using the BandsInTown API, the user is able to search for upcoming concerts by g
 
 The command "do-what-it-says" displays the message that is written in the random.txt file. 
 
-https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Do%20What%20it%20Says.png
+> ![alt text][logo5]
+
+[logo5]:https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Do%20What%20it%20Says.png "Random.txt file"
+
+## Error Message: 
+
+When a user enters in an invalid command, they will receive a nice "Try Again" message. Here you can see what is displayed when "concert-this" is misspelled. 
+
+> ![alt text][logo6]
+
+[logo6]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Error%20Message.png "Error Message"
