@@ -44,9 +44,8 @@ function useLiri(input) {
 function readFile() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     var content = data.split(",");
-    // console.log(content);
+    console.log(content);
     (input = content[0]), content[1];
-    console.log(input)
     useLiri(input);
   });
 }
@@ -73,7 +72,6 @@ function searchedSong() {
       console.log("Error Occured" + error);
       return;
     }
-    console.log(data);
     var track = data.tracks.items;
     for (var i = 0; i < track.length; i++) {
       console.log("\n" + "Artist: " + track[i].artists[0].name);
