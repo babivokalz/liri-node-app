@@ -30,11 +30,11 @@ If the user does not enter in a song title, then the default song "Ace of Base -
 
 [logo1]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20No%20Song%20Name.png "No Song Searched"
 
-## OMDB Usage:
+## OMDb Usage:
 
 > node liri.js movie-this
 
-Using the OMDB API, when the user gives the command "movie-this" in addition to their desired searched movie title, the data that returns includes the Movie Name, the Release Year, the Country of Origin, available Languages, the Cast of Actors, and a short summary of the movie plot. Here you can see what data returns when the movie "The Hangover" is searched.
+Using the OMDb API, when the user gives the command "movie-this" in addition to their desired searched movie title, the data that returns includes the Movie Name, the Release Year, the Country of Origin, available Languages, the Cast of Actors, and a short summary of the movie plot. Here you can see what data returns when the movie "The Hangover" is searched.
 
 > ![alt text][logo2]
 
