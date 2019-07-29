@@ -50,6 +50,12 @@ Movie-this also works when the user does not input a searched movie title, in th
 
 > node liri.js concert-this
 
+Using the BandsInTown API, the user is able to search for upcoming concerts by giving the command "concert-this" in addition to their desired searched Artist. The data that returns includes the Venue Name, Venue Location, and the Date of the Concert. Here you can see what data returns when the artist "Rezz" is searched.
+
+> ![alt text][logo]
+
+[logo]: 
+
 ## Read Instructions from File:
 
 > node liri.js do-what-it-says
