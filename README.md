@@ -75,6 +75,4 @@ When a user enters in an invalid command, they will receive a nice "Try Again" m
 
 [logo6]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Error%20Message.png "Error Message"
 
-## Logged Information: 
 
-The log.txt file is used to store all the returned search results from all the user commands (spotify-this-song, concert-this, and movie-this)
