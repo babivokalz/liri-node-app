@@ -14,7 +14,7 @@ var moment = require("moment");
 var fs = require("fs");
 
 // let writeToFile = false;
-var input = process.argv[3];
+var input = process.argv[2];
 
 // input = readFile(input);
 // let action = input.slice(0, input.indexOf(' ') == -1 ? input.length : input.indexOf(' '));
@@ -57,7 +57,7 @@ function writeToFile(output) {
     }
   });
 }
-searchedSong();
+// searchedSong();
 
 function searchedSong() {
   var songName = input;
@@ -99,7 +99,7 @@ function searchedSong() {
   });
 }
 
-searchedMovie();
+// searchedMovie();
 function searchedMovie() {
   var movieName = input;
   console.log(input)
@@ -109,7 +109,7 @@ function searchedMovie() {
     movieName = "Mr.+Nobody";
   }
   var queryURL =
-    "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy";
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
   axios.get(queryURL).then(function(response) {
     console.log("Title: " + response.data.Title);
@@ -141,7 +141,7 @@ function searchedMovie() {
   });
 }
 
-concertSearch();
+// concertSearch();
 
 function concertSearch() {
   var artistName = input;
