@@ -37,15 +37,16 @@ function useLiri(input) {
       readFile("random.txt");
       break;
     default:
-      console.log(input)
-      // console.log("Try Again");
+      console.log("Try Again");
   }
 }
 
 function readFile() {
   fs.readFile("random.txt", "utf8", function(error, data) {
-    var data = data.split(",");
-    (input = data[0]), data[1];
+    var content = data.split(",");
+    // console.log(content);
+    (input = content[0]), content[1];
+    console.log(input)
     useLiri(input);
   });
 }
@@ -60,13 +61,11 @@ function writeToFile(output) {
 // searchedSong();
 
 function searchedSong() {
-  var songName = searchedSong;
+  var songName = process.argv[3];
   if (!songName) {
-    songName = searchedSong;
-  } else {
     songName = "The Sign Ace of Base";
   }
-  spotify.search({ type: "track", query: input, limit: 1 }, function(
+  spotify.search({ type: "track", query: songName, limit: 1 }, function(
     error,
     data
   ) {
@@ -101,11 +100,8 @@ function searchedSong() {
 
 // searchedMovie();
 function searchedMovie() {
-  var movieName = input;
-  console.log(input)
+  var movieName = process.argv[3];
   if (!searchedMovie) {
-    movieName = searchedMovie;
-  } else {
     movieName = "Mr.+Nobody";
   }
   var queryURL =
@@ -124,7 +120,7 @@ function searchedMovie() {
     console.log("Language: " + response.data.Language);
     console.log("Plot: " + response.data.Plot);
     console.log("Actors: " + response.data.Actors);
-    console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
+    console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*" + "\n");
     writeToFile(
       "Country: " +
         response.data.Country +
@@ -136,7 +132,7 @@ function searchedMovie() {
         response.data.Plot +
         "\n" +
         "Actors: " +
-        response.data.Actors
+        response.data.Actors + "\n"
     );
   });
 }
@@ -144,7 +140,7 @@ function searchedMovie() {
 // concertSearch();
 
 function concertSearch() {
-  var artistName = input;
+  var artistName = process.argv[3];
   var queryURL =
     "https://rest.bandsintown.com/artists/" +
     artistName +
@@ -162,10 +158,10 @@ function concertSearch() {
           response.data[i].venue.country
       );
       console.log(
-        "Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY")
+        "Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\n"
       );
-      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
-      writeFile(
+      console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*" + "\n");
+      writeToFile(
         "Venue: " +
           response.data[i].venue.name +
           "\n" +
@@ -177,7 +173,7 @@ function concertSearch() {
           response.data[i].venue.country +
           "\n" +
           "Date: " +
-          moment(response.data[i].datetime).format("MM/DD/YYYY")
+          moment(response.data[i].datetime).format("MM/DD/YYYY" + "\n")
       );
     }
   });
