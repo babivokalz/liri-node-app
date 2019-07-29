@@ -18,13 +18,32 @@ For this assignment we were to create a command line node application called LIR
 ## Spotify Usage:
 
 > node liri.js spotify-this-song
+
+If the user searches a song title, they will get the results as shown below. 
 > ![alt text][logo]
 
 [logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20Song%20Search.png "Searched Song"
 
+If the user does not enter in a song title, then the default song "Ace of Base - The Sign" will be shown in the terminal.
+> ![alt text][logo]
+
+[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20No%20Song%20Name.png "No Song Searched"
+
 ## OMDB Usage:
 
 > node liri.js movie-this
+
+Using OMDB API, when the user gives the command "movie-this" in addition to their desired searched movie title, the data that returns includes the Movie Name, the Release Year, the Country of Origin, available Languages, the Cast of Actors, and a short summary of the movie plot. Here you can see what data returns when the movie "The Hangover" is searched.
+
+> ![alt text][logo]
+
+[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20Movie%20Search.png "The Hangover"
+
+Movie-this also works when the user does not input a movie title, in this case it will default to "Mr. Nobody". 
+
+> ![alt text][logo]
+
+[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20No%20Movie%20Name.png "No Movie Name"
 
 ## BandsInTown Usage:
 
