@@ -26,9 +26,9 @@ Using the Spotify API, when the user gives the command "spotify-this-song" in ad
 [logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20Song%20Search.png "Searched Song"
 
 If the user does not enter in a song title, then the default song "Ace of Base - The Sign" will be shown.
-> ![alt text][logo]
+> ![alt text][logo1]
 
-[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20No%20Song%20Name.png "No Song Searched"
+[logo1]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Spotify%20-%20No%20Song%20Name.png "No Song Searched"
 
 ## OMDB Usage:
 
@@ -36,9 +36,9 @@ If the user does not enter in a song title, then the default song "Ace of Base -
 
 Using the OMDB API, when the user gives the command "movie-this" in addition to their desired searched movie title, the data that returns includes the Movie Name, the Release Year, the Country of Origin, available Languages, the Cast of Actors, and a short summary of the movie plot. Here you can see what data returns when the movie "The Hangover" is searched.
 
-> ![alt text][logo]
+> ![alt text][logo2]
 
-[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20Movie%20Search.png "The Hangover"
+[logo2]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/OMDB%20-%20Movie%20Search.png "The Hangover"
 
 Movie-this also works when the user does not input a searched movie title, in this case it will default to "Mr. Nobody". 
 
@@ -54,8 +54,12 @@ Using the BandsInTown API, the user is able to search for upcoming concerts by g
 
 > ![alt text][logo]
 
-[logo]: 
+[logo]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Bands%20In%20Town.png "Bands In Town Search"
 
 ## Read Instructions from File:
 
 > node liri.js do-what-it-says
+
+The command "do-what-it-says" displays the message that is written in the random.txt file. 
+
+https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Do%20What%20it%20Says.png
