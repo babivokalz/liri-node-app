@@ -17,3 +17,75 @@ Artist: Excision
 Song: Throwin' Elbows
 Preview: https://p.scdn.co/mp3-preview/5fe9f38ec67c28f0cd481539188a5c6f74d33a8e?cid=85585bceeb4f4181980a124ef33435c1
 Album: Virus
+
+Artist: Ace of Base
+Song: The Sign
+Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=85585bceeb4f4181980a124ef33435c1
+Album: The Sign (US Album) [Remastered]
+
+Artist: *NSYNC
+Song: Bye Bye Bye
+Preview: https://p.scdn.co/mp3-preview/72b91cb27fac7beb50a2deffdd8b821fba5ba950?cid=85585bceeb4f4181980a124ef33435c1
+Album: No Strings Attached
+
+Venue: New Horizons Festival AUG 21-25
+Location: Nurburg, , Germany
+Date: 08/23/2019Venue: Creamfields Festival AUG 22-25
+Location: Warrington, , United Kingdom
+Date: 08/24/2019Venue: Red Rocks Amphitheatre
+Location: Morrison, CO, United States
+Date: 09/22/2019Venue: The Great Saltair
+Location: Magna, UT, United States
+Date: 09/27/2019Venue: Thomas & Mack Center
+Location: Las Vegas, NV, United States
+Date: 09/28/2019Venue: Greek Theatre
+Location: Los Angeles, CA, United States
+Date: 10/11/2019Venue: Bill Graham Civic Auditorium
+Location: Sf, CA, United States
+Date: 10/12/2019Venue: REZZ Beyond The Senses Tour
+Location: Worcester, MA, United States
+Date: 10/17/2019Venue: The Met Philadelphia
+Location: Philadelphia, PA, United States
+Date: 10/18/2019Venue: Voodoo Music + Arts Experience
+Location: New Orleans, LA, United States
+Date: 10/25/2019Venue: Freaky Deaky Texas OCT 26-27
+Location: Houston, TX, United States
+Date: 10/26/2019Venue: Armory - X Games
+Location: Minneapolis, MN, United States
+Date: 10/31/2019Venue: Aragon Ballroom
+Location: Chicago, IL, United States
+Date: 11/01/2019Venue: Masonic Temple
+Location: Detroit, MI, United States
+Date: 11/08/2019Venue: Arvest Bank Theatre At the Midland
+Location: Kansas City, MO, United States
+Date: 11/15/2019Venue: The Criterion
+Location: Oklahoma City, OK, United States
+Date: 11/20/2019Venue: El Paso County Coliseum
+Location: El Paso, TX, United States
+Date: 11/22/2019Venue: South West Four AUG 24-25
+Location: London, , United Kingdom
+Date: 08/25/2019Venue: Bumbershoot 2019 AUG 30-SEP 1
+Location: Seattle, WA, United States
+Date: 09/01/2019Venue: Imagine Festival SEP 20-22
+Location: Hampton, GA, United States
+Date: 09/20/2019Artist: Ace of Base
+Song: The Sign
+Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=85585bceeb4f4181980a124ef33435c1
+Album: The Sign (US Album) [Remastered]
+
+Country: USA
+Language: English
+Plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
+Actors: Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler
+Country: USA, Germany
+Language: English
+Plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.
+Actors: Bradley Cooper, Ed Helms, Zach Galifianakis, Justin Bartha
+Country: USA
+Language: English
+Plot: An unfortunate accident sets in motion a path of change for Nathanial Cane as he attempts to recover from substance abuse. A mentally unstable psychiatrist, DR. Henry Calhoon is tipping ...
+Actors: Ralph Cooley, Phillip Enriquez, Gregory Labenz, Amy MacDonald
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham

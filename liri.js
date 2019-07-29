@@ -79,7 +79,8 @@ function searchedSong() {
       console.log("Preview: " + track[i].preview_url);
       console.log("Album: " + track[i].album.name + "\n");
       console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*" + "\n");
-      writeToFile("Artist: " +
+      writeToFile(
+        "Artist: " +
           track[i].artists[0].name +
           "\n" +
           "Song: " +
@@ -90,7 +91,8 @@ function searchedSong() {
           "\n" +
           "Album: " +
           track[i].album.name +
-          "\n" + "\n"
+          "\n" +
+          "\n"
       );
     }
   });
@@ -99,7 +101,7 @@ function searchedSong() {
 // searchedMovie();
 function searchedMovie() {
   var movieName = process.argv[3];
-  if (!searchedMovie) {
+  if (!movieName) {
     movieName = "Mr.+Nobody";
   }
   var queryURL =
@@ -130,7 +132,8 @@ function searchedMovie() {
         response.data.Plot +
         "\n" +
         "Actors: " +
-        response.data.Actors + "\n"
+        response.data.Actors +
+        "\n"
     );
   });
 }
