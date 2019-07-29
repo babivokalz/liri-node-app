@@ -8,10 +8,16 @@ Song: Bye Bye Bye
 Preview: https://p.scdn.co/mp3-preview/72b91cb27fac7beb50a2deffdd8b821fba5ba950?cid=85585bceeb4f4181980a124ef33435c1
 Album: No Strings Attached
 
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite 
+possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
 Country: USA, Germany
 Language: English
-Plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their 
-way around the city in order to find their friend before his wedding.
+Plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make 
+their way around the city in order to find their friend before his wedding.
 Actors: Bradley Cooper, Ed Helms, Zach Galifianakis, Justin Bartha
 
 Artist: Rezz
@@ -63,8 +69,3 @@ Date: 09/20/2019Artist: Ace of Base
 Song: The Sign
 Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=85585bceeb4f4181980a124ef33435c1
 Album: The Sign (US Album) [Remastered]
-
-Country: USA, Germany
-Language: English
-Plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.
-Actors: Bradley Cooper, Ed Helms, Zach Galifianakis, Justin Bartha
