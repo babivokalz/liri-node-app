@@ -66,6 +66,7 @@ The command "do-what-it-says" displays the message that is written in the random
 
 [logo5]:https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Do%20What%20it%20Says.png "Random.txt file"
 
+
 ## Error Message: 
 
 When a user enters in an invalid command, they will receive a nice "Try Again" message. Here you can see what is displayed when "concert-this" is misspelled. 
@@ -73,3 +74,7 @@ When a user enters in an invalid command, they will receive a nice "Try Again" m
 > ![alt text][logo6]
 
 [logo6]: https://github.com/babivokalz/liri-node-app/blob/master/screenshots/Error%20Message.png "Error Message"
+
+## Logged Information: 
+
+The log.txt file is used to store all the returned search results from all the user commands (spotify-this-song, concert-this, and movie-this)
